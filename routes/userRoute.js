@@ -27,7 +27,7 @@ router.post("/signup", async (request, response) => {
     });
 
     if (newUser) {
-      const verificationToken = jwt.sign({ id: newUser._id }, "nebi", {
+      const verificationToken = jwt.sign({ id: newUser._id }, "titi", {
         expiresIn: "1h",
       });
 
@@ -60,7 +60,7 @@ router.post("/signin", async (request, response) => {
       return response.status(401).json({ message: "Invalid password" });
     }
 
-    const token = jwt.sign({ userId: user._id, islogged: true }, "nebi", {
+    const token = jwt.sign({ userId: user._id, islogged: true }, "titi", {
       expiresIn: "5hr",
     });
 
